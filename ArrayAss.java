@@ -1,3 +1,5 @@
+
+import java.util.Arrays;
 public class ArrayAss {
     public static void main(String[] args) {
         //int[] arr={2,3,0,5,0,8};
@@ -6,9 +8,12 @@ public class ArrayAss {
         //int[] arr={-2, 1, -3, 4, -1, 2, 1, -5, 4};
         //int result = maxSubarraySum(arr);
         //System.out.println(result);
-        int[] arr={2,3,2};
-        int result=votingAlgo(arr);
-        System.out.println((result));
+        //int[] arr={2,3,2};
+        //int result=votingAlgo(arr);
+        //System.out.println((result));
+        int[] arr={0,1,2,0,2,1,0};
+        sortColors(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     static void moveZerosToEnd(int[] arr){
@@ -67,8 +72,35 @@ public class ArrayAss {
     }
 
 
-    static int sortColors(int[] arr){
+    static void sortColors(int[] arr){
         //called as dutch national flag algo
+        //we use it for 0,1,2
+        // Instead of sorting normally, we use 3 pointers and do it in one pass (O(n))   
+        int low=0;
+        int mid=0;
+        int high=arr.length-1;
+
+        while(mid<high){
+            if(arr[mid] == 0){
+                //swap with low
+                int temp=arr[mid];
+                arr[mid]=arr[low];
+                arr[low]=temp;
+                low++;
+                mid++;
+            }
+            else if(arr[mid]==1){
+                mid++;
+            }
+            else if(arr[mid] ==2){
+                //swap with high;
+                int temp = arr[mid];
+                arr[mid] = arr[high];
+                arr[high] = temp;
+                high--;
+            }
+    }
+    
     }
 
 
