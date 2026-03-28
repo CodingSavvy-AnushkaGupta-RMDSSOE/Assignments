@@ -1,12 +1,14 @@
-
 public class ArrayAss {
     public static void main(String[] args) {
         //int[] arr={2,3,0,5,0,8};
         //moveZerosToEnd(arr);
         //System.out.println(Arrays.toString(arr));
-        int[] arr={-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int result = maxSubarraySum(arr);
-        System.out.println(result);
+        //int[] arr={-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        //int result = maxSubarraySum(arr);
+        //System.out.println(result);
+        int[] arr={2,3,2};
+        int result=votingAlgo(arr);
+        System.out.println((result));
     }
 
     static void moveZerosToEnd(int[] arr){
@@ -43,4 +45,31 @@ public class ArrayAss {
         }
         return maxisum;
     }
+
+
+    static int votingAlgo(int[] arr){
+        //candidate and vote
+        int vote=0;
+        int candidate=0;
+        for(int i :arr){
+            if (vote == 0) {
+                candidate = i;
+            }
+            if(i == candidate ){
+                vote++;
+            }
+            else{
+                vote--;
+            }
+            
+        }
+        return candidate;
+    }
+
+
+    static int sortColors(int[] arr){
+        //called as dutch national flag algo
+    }
+
+
 }
