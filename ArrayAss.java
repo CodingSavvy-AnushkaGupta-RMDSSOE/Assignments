@@ -104,7 +104,7 @@ public class ArrayAss {
     }
 
 
-    static void maxSubarray(int[] arr){
+    /*static void maxSubarray(int[] arr){
         //sliding Window
         int left=0;
         int right=arr.length;
@@ -116,7 +116,7 @@ public class ArrayAss {
                 
             }
         }
-    }
+    }*/
 
 
 }
